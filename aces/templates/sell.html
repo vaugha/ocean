@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\style2.css">
+    <script src="static/menu.js"></script>
+    <title>sell</title>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="btn" onclick="blink()">
+        
+            <div class="menu "></div>
+            <div class="menu "></div>
+            <div class="menu "></div>
+            <div class="menu "></div>
+          
+        </button>
+       
+        <div class="dropdowncontent" id="menu" >
+            <ul>
+                    <li><a href="/"> Home </a></li>
+                    
+                    <li><a href="/buy"> Buy </a></li>
+                    <li><a href="/sell" class="activelk"> Sell</a></li>
+                   
+                    <li><a href="/about"> about</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <br><br>
+    <h1>Sell</h1>
+    
+    <form action="/notice">
+        
+        <div class="inputsell" >
+            <label for="fname">First name:</label>
+              <input type="text" name="name" placeholder="First Name" class="fname" class="heighttext" size=27 pattern="[a-zA-Z .'']{3,25}" required> 
+             
+              <label for="sname">Surname:</label>
+              <input type="text" name="surname" placeholder="Surname"  class="sname" size=27 pattern="[a-zA-Z .'']{3,25}" required> 
+            
+              <label for="maill">Email :</label>
+              <input type="text" name="email" placeholder="Email" id="email"  class="maill" size=27 pattern="[a-zA-Z0-9.!#@$%^*_|]{9,30}" required>
+              
+               <label for="instagrammm">Instagram:</label>
+              <input type="text" name="insta" placeholder="Instagram" class="instagrammm" size=27 pattern="[a-zA-Z0-9!#$%^*_|]{5,25}" >
+               
+                <label for="phonenumber">Phone:</label>
+             <input type="text" name="numb" placeholder="Whatsapp number"  class="phonenumber" id="number" size=27 pattern="[0-9]{10}" maxlength=10 required>
+          
+             <label for="bname">Book name:</label>
+              <input type="text" name="book" placeholder="Book Name" size=27  class="bname" required>
+           
+              <label for="Description">Description (how old, the condition, etc):</label>
+              <input type="text" name="descript" placeholder="Description" size=27  class="Description"  required>
+            
+             <label for="sellingprice">Selling Price:</label>
+             <input type="text" name="price" placeholder="Selling Price" size=27  class="sellingprice" pattern="[0-9 . ]{1,8}" required>
+            
+             <label for="originalprice">Original Price:</label>
+             <input type="text" name="oprice" placeholder="Original Price" size=27 class="originalprice"  pattern="[0-9 . ]{1,8}" required>
+                <br>
+            <input type="submit"></input>
+        </div>
+    </form>
+    
+
+
+</body>
+</html>

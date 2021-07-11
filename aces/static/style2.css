@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+body{
+  
+  overflow: unset;
+    background-color:#474d57;
+    color:#eeeeee;
+    font-family: 'Cardo', serif;
+    font-size: 20px;
+    
+    
+    background-image:url('s5.png') ;
+    width: 100%;
+    height: 100%;
+    background-size:unset;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow-x: clip ;
+    
+ 
+
+}
+
+
+h1{
+    color: #ffcc29;
+    font-family: 'cardo', serif;
+    /*text-transform: uppercase;*/
+    text-align: center;
+    font-size: 50px;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #ffcc29;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    
+   }
+
+   ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color:MediumSeaGreen;
+  }
+  
+  p{
+    text-align: center;
+    font-size: 60px;
+  }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background-color:MediumSeaGreen;
+}
+
+li {
+  float: left;
+  color:white;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.activelk {
+  background-color: DarkCyan;
+}
+
+a:link {
+  color: LightSeaGreen;
+}
+
+/* visited link */
+a:visited {
+  color:white;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: ForestGreen;
+}
+
+
+.menu{
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 2px 0;
+}
+
+.btn {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;   
+}
+.dropdowncontent {
+
+  display: none;
+  position:absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+ /* Change color of dropdown links on hover */
+.dropdowncontent a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdowncontent {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .btn {background-color: #3e8e4102;} 
+
+.transbox {
+  max-width: 750px;
+  background-color: rgba(49, 49, 49, 0.6);;
+  border: 1px solid black;
+  position: relative;
+  margin: auto;
+  padding:10px;
+}
+
+.dataa{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.inputsell{
+  /*max-width: 150px;
+  align-items: center;
+  position:relative;
+  margin: auto;
+ */
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  padding: 0px;
+}
+
+.box{
+  background-color: rgb(13, 150, 127);opacity: 0.8;
+  width: 300px;
+  max-height: 400px;
+  border: 5px solid white;;
+  padding: 50px;
+  margin: 20px;
+  position: relative;
+  float:left;
+  overflow-y: auto;
+  overflow-x: auto;
+  
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.heighttext{
+  height:40px;
+  
+}
+
+input[type='text'] { font-size: 20px; }
+
+input[type=text] {
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}  
+
+input[type='password'] { font-size: 20px; }
+
+input[type=password] {
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}  
+
+input[type=text]:focus {
+  border: 5px solid #555;
+}
+
+input[type=submit]{
+  background-color: #ffcc29;
+  border: none;
+  font-size: 24px;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.yellow{
+  color:#ffcc29;
+}

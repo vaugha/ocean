@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+body{
+  
+  overflow: unset;
+    background-color:#474d57;
+    color:#eeeeee;
+    font-family: 'Cardo', serif;
+    font-size: 20px;
+    
+    
+    background-image:url('s5.png');
+    width: 100%;
+    height: 100%;
+    background-size:unset;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow-x: clip ;
+    
+ 
+
+}
+
+
+h1{
+    color: #ffcc29;
+    font-family: 'cardo', serif;
+    /*text-transform: uppercase;*/
+    text-align: center;
+    font-size: 50px;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #ffcc29;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+   }
+
+   ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color:MediumSeaGreen;
+  }
+  
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background-color:MediumSeaGreen;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.activelk {
+  background-color: DarkCyan;
+}
+
+a:link {
+  color: LightSeaGreen;
+}
+
+/* visited link */
+a:visited {
+  color:white;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: ForestGreen;
+}
+
+
+.menu{
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 2px 0;
+}
+
+.btn {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;   
+}
+.dropdowncontent {
+
+  display: none;
+  position:absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+ /* Change color of dropdown links on hover */
+.dropdowncontent a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdowncontent {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .btn {background-color: #3e8e4102;} 
+
+.content {
+  max-width: 350px;
+  background-color: rgba(49, 49, 49, 0.6);;
+  border: 1px solid black;
+  position: absolute;
+  margin: auto;
+  padding:10px;
+}
+

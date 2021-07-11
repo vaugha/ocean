@@ -1,0 +1,114 @@
+from flask import Flask, redirect, render_template, request, url_for
+from flask_sqlalchemy import SQLAlchemy 
+from flask_admin import Admin 
+from flask_admin.contrib.sqla import ModelView
+
+
+import sqlite3
+
+app=Flask(__name__)
+list=[]
+
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/vaughan/Desktop/coding3/ocean.db'
+app.config['SECRET_KEY'] = 'mysecret'
+
+db = SQLAlchemy(app)
+
+admin = Admin(app)
+
+class ocean(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30))
+    surname = db.Column(db.String(30))
+    email = db.Column(db.String(30))
+    insta = db.Column(db.String(30))
+    numb = db.Column(db.String(30))
+    book = db.Column(db.String(30))
+    descript = db.Column(db.String(60))
+    price = db.Column(db.String(30))
+    oprice = db.Column(db.String(30))
+
+admin.add_view(ModelView(ocean, db.session))
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+@app.route("/")
+def index():
+    return render_template("home.html")
+
+@app.route("/login",methods=["GET","POST"])
+def login():
+    error = None
+    if request.method == "POST":
+        if request.form['admin'] != 'ACES' or request.form['password'] != 'ACCESS':
+            error = ' Invalid Authorization '
+        else :
+            return redirect(url_for('data'), code=307)
+    return render_template("login.html",error=error)
+   
+
+@app.route("/buy")
+def buy():
+    connection=sqlite3.connect("ocean.db")
+    connection.row_factory= sqlite3.Row
+    bdata=connection.execute("SELECT * FROM ocean")
+    return render_template("buy.html",bdata=bdata)
+    
+
+@app.route("/sell")
+def sell():
+    return render_template("sell.html")
+
+@app.route("/logout")
+def logout():
+    return render_template("logout.html")
+
+@app.route("/about")
+def about():
+   return render_template("about.html")
+
+@app.route("/notice")
+def notice():
+    
+    name= request.args.get("name")
+    surname= request.args.get("surname")
+    email=request.args.get("email")
+    insta= request.args.get("insta")
+    numb= request.args.get("numb")
+    book=request.args.get("book")
+    descript= request.args.get("descript")
+    price=request.args.get("price")
+    oprice=request.args.get("oprice")
+    X = libofbook(name,surname,email,insta,numb,book,descript,price,oprice)
+    
+    return render_template("notice.html",X=X)
+
+
+def libofbook(name,surname,email,insta,numb,book,descript,price,oprice):
+
+    connection=sqlite3.connect("ocean.db")
+    connection.execute("INSERT INTO ocean(name,surname,email,insta,numb,book,descript,price,oprice) VALUES (:name,:surname,:email,:insta,:numb,:book,:descript,:price,:oprice)",{"name":name,"surname":surname,"email":email,"insta":insta,"numb":numb,"book":book,"descript":descript,"price":price,"oprice":oprice})
+    connection.commit()
+    connection.close()
+    return (0)
+
+
+@app.route("/data" , methods=["POST"])
+def data():
+   
+    connection=sqlite3.connect("ocean.db")
+    connection.row_factory= sqlite3.Row
+    bdata=connection.execute("SELECT * FROM ocean")
+
+    return render_template("data.html",bdata=bdata)
+    
+    connection.close()
+    
+
+
+
+    
+    
