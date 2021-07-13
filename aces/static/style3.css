@@ -20,27 +20,66 @@
   background: #555; 
 }
 
-body{
-  
-  overflow: unset;
-    background-color:#474d57;
-    color:#eeeeee;
-    font-family: 'Cardo', serif;
-    font-size: 20px;
-    
-    
-    background-image:url('s5.png');
-    width: 100%;
-    height: 100%;
-    background-size:unset;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    overflow-x: clip ;
-    
- 
 
+:root {
+  --backgroundColor: #232323;
+  --firstColor: #00d69c;
+  --secondColor: #c52afc;
+  --thirdColor: #ff1f00;
+  --fourthColor: #ffd600;
+  --dropShadowColor: rgba(0, 0, 0, 0.7);
 }
 
+html,
+body {
+  
+  background-color: var(--backgroundColor);
+  color:white;
+  font-size:20px;
+}
+
+main {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+}
+
+.blob {
+  margin: auto;
+}
+
+svg {
+  transform-origin: 50% 50%;
+  animation: move 24s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1) translate(0, 0) rotate(0);
+    fill: var(--firstColor);
+    filter: drop-shadow(20px 14px 10px var(--dropShadowColor));
+  }
+  25% {
+    transform: scale(0.8) translate(5vw, 10vh) rotate(55deg);
+    fill: var(--secondColor);
+    filter: drop-shadow(14px 14px 6px var(--dropShadowColor));
+  }
+  50% {
+    transform: scale(0.6) translate(15vw, 5vh) rotate(180deg);
+    fill: var(--thirdColor);
+    filter: drop-shadow(-16px -16px 16px var(--dropShadowColor));
+  }
+  75% {
+    transform: scale(0.8) translate(5vw, 10h) rotate(55deg);
+    fill: var(--fourthColor);
+    filter: drop-shadow(14px 14px 6px var(--dropShadowColor));
+  }
+  100% {
+    transform: scale(1) translate(0, 0) rotate(0);
+    fill: var(--firstColor);
+    filter: drop-shadow(20px 14px 10px var(--dropShadowColor));
+  }
+}
 
 h1{
     color: #ffcc29;
@@ -145,6 +184,7 @@ a:active {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .btn {background-color: #3e8e4102;} 
+ 
 
 .content {
   max-width: 350px;
@@ -153,5 +193,9 @@ a:active {
   position: absolute;
   margin: auto;
   padding:10px;
+}
+
+.yellow{
+  color:#ffcc29;
 }
 

@@ -22,32 +22,25 @@
   background: #555; 
 }
 
+ /* On smaller screens, decrease text size */
+ @media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
 body{
     overflow: unset;
-    background-color:#474d57;
+    background-color:#283347;
     color:#eeeeee;
     font-family: 'Newsreader', serif;
-font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    
-    
-    background-image:url('s5.png') ;
-    width: 100%;
-    height: 100%;
-    background-size:unset;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    overflow-x: clip;
-
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px
    /* overflow-y: scroll;*/
 
 }
 
-
 h1{
     color: #ffc400;
     font-family: 'Sofia', cursive;
-    /*text-transform: uppercase;*/
     text-align: center;
     font-size: 100px;
 }
@@ -59,9 +52,7 @@ h2, h3, h4, h5, h6 {
 
 p{
   color:rgb(247, 247, 247);
-  font-size: 25px;
-  
-  
+  font-size: unset; 
 }
 
 
@@ -91,10 +82,11 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    
   }
   
   li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #586c91;
   }
   
   .activelk {
@@ -137,15 +129,15 @@ ul {
   }
 .dropdowncontent {
 
-    display: none;
+    display:none;
     position:absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
     
   }
   
   /* Change color of dropdown links on hover */
-  .dropdowncontent a:hover {background-color: #ddd;}
+  .dropdowncontent a:hover {background-color: white;}
 
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdowncontent {display: block;}
@@ -165,45 +157,6 @@ ul {
 }
 
  
-
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
-  }
-  
-
-  .mbox1 {
-    
-    background-color: rgba(15, 8, 8, 0);;
-    border: none;
-    position:absolute;
-    max-width: 250px;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    text-align: center;
-  }
-
-  .ombox {
-    max-width: 900px;
-    max-height: 600px;
-    background-color: rgba(0, 0, 0, 0.301);;
-    border: 1px solid black;
-    
-   
-    overflow-y: auto;
-    overflow-x: auto;
-  }
-
-  .bgbox {
-    
-    background-color: rgba(15, 8, 8, 0.014);;
-    border: none;
-    position:relative;
-    max-width: 2000px;
-    max-height: 500px;
-    padding-left: 525px;
-  }
-
   .flex-container {
     display: flex;
     flex-direction: row;
@@ -222,26 +175,15 @@ ul {
     color: white;
   }
 
-  .box-3 {
-    background-color: #D9DD6B;
-  }
-
-  .box-4 {
-    background-color: #ECEFA4;
+  .box-1 {
+    background-color: #a12d2d;
   }
 
   .box-2 {
     background-color: #D54C4C;
   }
 
-  .box-1 {
-    background-color: #a12d2d;
-  }
+  
 
-  .bgbox {
-    
-    background-color: rgba(15, 8, 8, 0.014);;
-    border: none;
-    position:relative;
-    
-  }
+ 
+  

@@ -1,4 +1,5 @@
-from flask import Flask, redirect, render_template, request, url_for
+from re import T
+from flask import Flask, redirect, render_template, request, url_for,session,abort
 from flask_sqlalchemy import SQLAlchemy 
 from flask_admin import Admin 
 from flask_admin.contrib.sqla import ModelView
@@ -11,7 +12,7 @@ list=[]
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/vaughan/Desktop/coding3/ocean.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/Joshua/Desktop/projectx/aces/ocean.db'
 app.config['SECRET_KEY'] = 'mysecret'
 
 db = SQLAlchemy(app)
@@ -30,7 +31,14 @@ class ocean(db.Model):
     price = db.Column(db.String(30))
     oprice = db.Column(db.String(30))
 
-admin.add_view(ModelView(ocean, db.session))
+class SecureModelView(ModelView):
+    def is_accessible(self):
+        if "logged_in" in session:
+            return True
+        else:
+            abort(403)
+         
+admin.add_view(SecureModelView(ocean, db.session))
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -40,15 +48,27 @@ def index():
     return render_template("home.html")
 
 @app.route("/login",methods=["GET","POST"])
-def login():
+def login():   
+
     error = None
     if request.method == "POST":
-        if request.form['admin'] != 'ACES' or request.form['password'] != 'ACCESS':
-            error = ' Invalid Authorization '
+
+        if request.method == "POST":
+
+            if request.form['admin'] == 'ACES' or request.form['password'] == 'ACCESS':
+                session['logged_in'] = True
+                return redirect(url_for('data'), code=307)
         else :
-            return redirect(url_for('data'), code=307)
+             error = ' Invalid Authorization '
+        
     return render_template("login.html",error=error)
-   
+
+@app.route("/logout")
+def logout():
+    session.clear()
+
+    return render_template("logout.html")
+
 
 @app.route("/buy")
 def buy():
@@ -62,9 +82,9 @@ def buy():
 def sell():
     return render_template("sell.html")
 
-@app.route("/logout")
 def logout():
-    return render_template("logout.html")
+    session.clear()
+    return redirect("/HOME")
 
 @app.route("/about")
 def about():
@@ -106,9 +126,10 @@ def data():
     return render_template("data.html",bdata=bdata)
     
     connection.close()
-    
 
-
+@app.route("/ocean")
+def ocean():
+    return render_template("ocean.html")
 
     
     
