@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static\style2.css">
     <script src="static/menu.js"></script>
-    <title>login</title>
+    <title>success</title>
    
 
 </head>
@@ -27,7 +27,7 @@
                 <li><a href="/buy"> Buy </a></li>
                 <li><a href="/sell"> Sell</a></li>
                 <li><a href="/login" class="activelk"> Login</a></li>
-                <li><a href="/admin"> admin</a></li>
+                <li><a href="/admin" style="text-decoration: none;" > admin</a></li>
                 <li><a href="/logout"> Logout</a></li>
                 <li><a href="/about"> About</a></li>
         </ul>
@@ -36,22 +36,8 @@
 
 <br><br>
 
-<h1>Login</h1>
-<br><br>
-<div class="inputsell" >
-<form action="" method="POST">
-    <input type="text" name="admin" placeholder="username" value=""{{request.form.admin}}>
-    <br><br>
-    <input type="password" name="password" placeholder="password" value=""{{request.form.password}}>
-    <br><br>
-    <centre>
-    <input type="submit" class="center" >
-    </centre>
-    </form>
-    {% if error%}
-    <p class = "error"><strong>Error:</strong>{{ error }}</p>
-    {% endif %}
-</div>
+<h1>ACCESS GRANTED</h1>
+
 </body>
 </html>
 

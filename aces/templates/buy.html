@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static\style4.css">
+   
     <script src="static/ocean.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="static\style4.css">
     <title>buy</title>
 </head>
 <body>
@@ -88,32 +89,42 @@
 
     <br><br>
 
-
+    <div class="listings-container">
     {% for name in bdata %}
-    <div class="spacer" >
-        <div class="card" >
+    
+      <div class="listing"> 
+        <div class="card "  >
             <img src="static\oceanlogo.png" class="card-img-top" alt="book">
             <div class="card-body">
     
-                <h5 class="card-title">Card title</h5>
-                <ul>
+                <h5 class="card-title"> {{name["book"]}} </h5>
+                
                 <p class="card-text">   
-                <li style="float: none;">{{name["name"]}} {{name["surname"]}}  </li>
-                 <li style="float: none;">   {{name["email"]}} </li>
-                     <li style="float: none;">    {{name["insta"]}}  </li>
-                       <li style="float: none;">   {{name["numb"]}}</li>
-                           <li style="float: none;">   {{name["book"]}} </li>
-                                  <li style="float: none;">  {{name["descript"]}} </li>
-                                     <li style="float: none;">  {{name["price"]}}</li>
-                                         <li style="float: none;">   {{name["oprice"]}} <li>
+                {{name["name"]}} {{name["surname"]}}  
+                <br><br>
+                     {{name["email"]}} 
+                     <br>
+                      {{name["insta"]}} 
+                      <br> 
+                       {{name["numb"]}}
+                       <br><br>
+                          {{name["book"]}} 
+                          <br>
+                            {{name["descript"]}} 
+                            <br><br>
+                              {{name["price"]}}
+                              <br>
+                                {{name["oprice"]}}
+                                <br>
                 </p>
-                </ul>
-                <a href="#" class="btn btn-primary">View</a>
+                
+                <a href="mailto:{{name["email"]}}" class="btn btn-primary">contact</a>
             </div>
         </div>
-        <br>
-    </div>    
+      </div>  
+      
+     
     {% endfor %}
-    
+  </div>  
 </body>
 </html>

@@ -196,7 +196,7 @@ a:active {
 }
 
 .heighttext{
-  height:40px;
+  height:50px;
   
 }
 
@@ -221,7 +221,7 @@ input[type=password] {
 }  
 
 input[type=text]:focus {
-  border: 5px solid #555;
+  border: 5px solid rgb(0, 163, 204);
 }
 
 input[type=submit]{
@@ -245,6 +245,7 @@ input[type=submit]{
   min-height: 642px;
   padding:2px;
   float: left;
+  background-color: rgb(61, 56, 56);
 }
 
 
@@ -811,3 +812,17 @@ body {
     z-index: -1;
   }
   
+
+  .listings-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.card{
+    flex-shrink:0;
+}
+.listing{
+    padding:50px;
+}

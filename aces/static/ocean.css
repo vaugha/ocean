@@ -53,6 +53,7 @@ body {
   background-color: #000;
 }
 .drop-down-container {
+  
   height: 15%;
   width: 90%;
   left: 160%;
@@ -96,7 +97,7 @@ body {
   top: 60px;
 }
 .the-bass.dropped {
-  height: 60vh;
+  height: 40vh;
   padding: 5px 0;
   transition: 0.35s ease;
 }
@@ -448,4 +449,85 @@ body {
   100% {
     background-color: #9c27b0;
   }
+}
+
+@import "https://fonts.googleapis.com/css?family=Lato:100";
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+  font-family: "Lato", Arial, sans-serif;
+
+}
+
+header{
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 9s ease-in-out infinite;
+
+}
+
+.buysell {
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5rem 10rem;
+  max-width: 320px;
+}
+
+@keyframes change {
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px){
+  .nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+}
+
+
+a:visited {
+  color:white;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: ForestGreen;
 }

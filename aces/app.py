@@ -12,7 +12,7 @@ list=[]
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/Joshua/Desktop/projectx/aces/ocean.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/vaughan/Desktop/coding3/ocean.db'
 app.config['SECRET_KEY'] = 'mysecret'
 
 db = SQLAlchemy(app)
@@ -44,8 +44,9 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 @app.route("/")
-def index():
-    return render_template("home.html")
+def ocean():
+    return render_template("ocean.html")
+
 
 @app.route("/login",methods=["GET","POST"])
 def login():   
@@ -55,18 +56,17 @@ def login():
 
         if request.method == "POST":
 
-            if request.form['admin'] == 'ACES' or request.form['password'] == 'ACCESS':
+            if request.form['admin'] == 'ACES' and request.form['password'] == 'ACCESS':
                 session['logged_in'] = True
-                return redirect(url_for('data'), code=307)
-        else :
-             error = ' Invalid Authorization '
-        
+                return redirect(url_for('success'), code=307)
+            else :
+                error = ' Invalid Authorization '
     return render_template("login.html",error=error)
+
 
 @app.route("/logout")
 def logout():
     session.clear()
-
     return render_template("logout.html")
 
 
@@ -84,13 +84,13 @@ def sell():
 
 def logout():
     session.clear()
-    return redirect("/HOME")
+    return redirect("/logout")
 
 @app.route("/about")
 def about():
    return render_template("about.html")
 
-@app.route("/notice")
+@app.route("/notice" ,methods=["POSt"])
 def notice():
     
     name= request.args.get("name")
@@ -128,8 +128,11 @@ def data():
     connection.close()
 
 @app.route("/ocean")
-def ocean():
-    return render_template("ocean.html")
+def index():
+    return render_template("home.html")
 
+@app.route("/success",methods=["get","post"])
+def success():
+    return render_template("success.html")
     
     
