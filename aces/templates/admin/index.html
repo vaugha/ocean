@@ -1,0 +1,138 @@
+{% block body %}
+<body>
+    <style>
+
+  body
+  {
+    overflow: unset;
+    background-color:#474d57;
+    color:#eeeeee;
+    font-family: 'Cardo', serif;
+    font-size: 20px;
+    
+    background-image:url('/static/s3.png') ;
+    width: 100%;
+    height: 100%;
+    background-size:unset;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    overflow-x: clip ;
+  }
+
+  ul
+  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color:rgba(60, 179, 114, 0);
+  }
+  
+  li 
+  {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .activelk {
+    background-color: DarkCyan;
+  }
+
+  a:link {
+    color: LightSeaGreen;
+  }
+  
+  /* visited link */
+  a:visited {
+    color:white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(226, 19, 19);
+  }
+  
+  /* selected link */
+  a:active {
+    color: ForestGreen;
+  }
+
+
+
+  .menu{
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 2px 0;
+  }
+  .btn {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;   
+  }
+  
+
+  .dropdowncontent {
+
+  display: none;
+  position:absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  }
+  /* Change color of dropdown links on hover */
+  .dropdowncontent a:hover {background-color: #ddd;}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdowncontent {display: block;}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .btn {background-color: #3e8e4102;} 
+
+</style>
+
+
+<div class="dropdown">
+    <button class="btn" >
+        
+        <div class="menu "></div>
+        <div class="menu "></div>
+        <div class="menu "></div>
+        <div class="menu "></div>
+            
+    </button>
+       
+
+    <div class="dropdowncontent"  >   
+
+
+        <ul class="dropdowncontent">
+                
+        <li><a href="/" > HOME </a></li>
+        <li><a href="/admin" class="activelk" style="text-decoration: none;"> Admin</a></li>  
+        <li><a href="/login"> Login</a></li> 
+        <li><a href="/admin/ocean/">ocean db</a></li>
+        <li><a href="/logout"> Logout</a></li>
+
+        </ul>
+    </div>      
+
+           
+</div>
+    
+<h1 style="text-align:center;">FOR ADMIN USE ONLY</h1>
+</body>
+{% endblock %}

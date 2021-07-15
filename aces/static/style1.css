@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@200&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+ /* On smaller screens, decrease text size */
+ @media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+body{
+    overflow: unset;
+    background-color:#283347;
+    color:#eeeeee;
+    font-family: 'Newsreader', serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px
+   /* overflow-y: scroll;*/
+
+}
+
+h1{
+    color: #ffc400;
+    font-family: 'Sofia', cursive;
+    text-align: center;
+    font-size: 100px;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #ffcc29;
+    font-family: 'Oswald', sans-serif;
+   }
+
+p{
+  color:rgb(247, 247, 247);
+  font-size: unset; 
+}
+
+
+/*
+color pallet darkgrey 393e46,
+darkcyan 00adb5,
+lightblue aad8d3,
+lightgrey  eeeeee,
+yellow ffcc29.
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color:MediumSeaGreen;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #586c91;
+  }
+  
+  .activelk {
+    background-color: DarkCyan;
+  }
+
+  a:link {
+    color: LightSeaGreen;
+  }
+  
+  /* visited link */
+  a:visited {
+    color:white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: white;
+  }
+  
+  /* selected link */
+  a:active {
+    color: ForestGreen;
+  }
+
+  
+.menu{
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 2px 0;
+  }
+
+.btn {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;   
+  }
+.dropdowncontent {
+
+    display:none;
+    position:absolute;
+    min-width: 160px;
+    box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+    
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdowncontent a:hover {background-color: white;}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdowncontent {display: block;}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .btn {background-color: #3e8e4102;} 
+
+
+
+.transbox {
+  max-width: 500px;
+  background-color: rgba(15, 8, 8, 0.301);;
+  border: 1px solid black;
+  position:unset;
+  margin: 80px;
+  padding:10px;
+}
+
+ 
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    border: 0px solid #eee;
+    border-radius: 2px;
+    padding-left: 850px;
+  }
+
+  .flex-item {
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 100px;
+    font-size: 30px;
+    color: white;
+  }
+
+  .box-1 {
+    background-color: #a12d2d;
+  }
+
+  .box-2 {
+    background-color: #D54C4C;
+  }
+
+  
+
+ 
+  

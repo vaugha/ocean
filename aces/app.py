@@ -58,7 +58,7 @@ def login():
 
             if request.form['admin'] == 'ACES' and request.form['password'] == 'ACCESS':
                 session['logged_in'] = True
-                return redirect(url_for('success'), code=307)
+                return redirect(url_for('index'))
             else :
                 error = ' Invalid Authorization '
     return render_template("login.html",error=error)
@@ -90,7 +90,7 @@ def logout():
 def about():
    return render_template("about.html")
 
-@app.route("/notice" ,methods=["POSt"])
+@app.route("/notice")
 def notice():
     
     name= request.args.get("name")
@@ -116,23 +116,13 @@ def libofbook(name,surname,email,insta,numb,book,descript,price,oprice):
     return (0)
 
 
-@app.route("/data" , methods=["POST"])
-def data():
-   
-    connection=sqlite3.connect("ocean.db")
-    connection.row_factory= sqlite3.Row
-    bdata=connection.execute("SELECT * FROM ocean")
-
-    return render_template("data.html",bdata=bdata)
-    
-    connection.close()
 
 @app.route("/ocean")
-def index():
+def indexhome():
     return render_template("home.html")
 
-@app.route("/success",methods=["get","post"])
-def success():
-    return render_template("success.html")
+@app.route("/index",methods=["GET","POST"])
+def index():
+    return render_template("/admin/index.html")
     
-    
+
