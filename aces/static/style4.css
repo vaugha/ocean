@@ -56,7 +56,7 @@ h2, h3, h4, h5, h6 {
 
   
 p{
-    text-align: center;
+    text-align: left;
  }
 
 ul {
@@ -85,7 +85,7 @@ li a:hover:not(.active) {
 }
 
 .activelk {
-  background-color: DarkCyan;
+  background-color: darkcyan;
 }
 
 a:link {
@@ -109,8 +109,8 @@ a:active {
 
 
 .menu{
-  width: 20px;
-  height: 2px;
+  width: 48px;
+  height: 8px;
   background-color: white;
   margin: 2px 0;
 }
@@ -120,7 +120,8 @@ a:active {
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
-  overflow: hidden;   
+  overflow: hidden; 
+  padding: 24px;  
 }
 .dropdowncontent {
 
@@ -204,8 +205,8 @@ input[type=submit]{
   
 .listings-container{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   flex-wrap: wrap;
   
 }
